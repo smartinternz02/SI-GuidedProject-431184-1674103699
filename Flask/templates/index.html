@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Segmentation</title>
+</head>
+
+<body background="https://www.imf.org/external/pubs/ft/fandd/2020/03/images/032020/picture-1600.jpg" text="black">
+    <div class="login">
+        <center>
+            <h1>Customer Segmentation</h1>
+        </center>
+        <!-- Main Input For Receiving Query to our ML -->
+        <form action="{{ url_for('predict')}}" method="post">
+            <h1>Please enter the following details</h1>
+            </style>
+            </head>
+            <label>Id:</label>
+            <input type="number"  name="Id" placeholder="Id" required="required" /><br>
+            <label for="Sex">Sex:</label>
+            <select id="Sex" name="Sex">
+                <option value=0>Female</option>
+                <option value=1>Malek/option>
+            </select> &nbsp;&nbsp;<br>
+            <br><label for="Marital status">Marital status:</label> <select id="Marital status" name="Marital status">
+                <br>
+                <br>
+                <option value=0>single</option>
+                <option value=1>Married</option>
+            </select> &nbsp;&nbsp;<br>
+            <label>Age:</label>
+            <input type="number" min="20" max="80" name="Age" placeholder="Age" required="required" /><br>
+            <label>Education:</label>
+            
+            <input type="number" min="0" max="3" name="Education" placeholder="Education" required="required" /><br>          
+           
+            <label>Income:</label>
+            <input type="number" min="5000" name="Income" placeholder="Income" required="required" /><br>
+            <br><label for="Occupation">Occupation:</label>
+            <select id="Occupation" name="Occupation">
+                <option value=0>Not Working</option>
+                <option value=1>Working</option>
+                <option value=1>Business</option>
+            </select> &nbsp;&nbsp;<br>
+            <br>
+            <label for="Settlement size">Settlement size:</label>
+            <br><br>
+            <select id="Settlement size" name="Settlement size">
+                <option value=1>1</option>
+                <option value=0>0</option>
+                <option value=2>2</option>
+            </select> &nbsp;&nbsp;<br>
+            <button type="submit" class="btn btn-primary btn-block btn-large"
+                style="height:30px;width:200px">Predict</button>
+            <br>
+            <br>
+        </form>
+        {{ prediction_text }}
+        <br> <br>
+        <img src="data:image/png;base64,{{url_3}}" alt="Submit Form" height="180" width="233"
+            onerror="this.style.display='none'" /> <img src="data:image/png;base64,{{url_1}}" alt="Submit Form"
+            height="180" width="233" onerror="this.style.display='none'" /> <img src="data:image/png;base64,{{url_4}}"
+            alt="Submit Form" height="180" width="233" onerror="this.style.display='none'" /> <br>
+        <br>
+        <img src="data:image/png;base64,{{url_2}}" alt="Submit Form" height="150" width="711"
+            onerror="this.style.display='none'" />
